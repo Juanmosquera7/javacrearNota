@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.notas.controladores.InicioControlador">
+   <children>
+       <Label layoutX="27.0" layoutY="35.0" text="Titulo:" />
+       <TextField fx:id="txtTitulo" layoutX="100.0" layoutY="30.0" minWidth="270.0" />
+
+
+       <Label layoutX="27.0" layoutY="85.0" text="Categoria:" />
+       <ComboBox fx:id="cmbCategoria" layoutX="100.0" layoutY="80.0" minWidth="270.0">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Trabajo" />
+                   <String fx:value="Personal" />
+                   <String fx:value="Estudio" />
+                   <String fx:value="Otros" />
+               </FXCollections>
+           </items>
+       </ComboBox>
+
+
+       <Label layoutX="27.0" layoutY="135.0" text="Nota:" />
+       <TextArea fx:id="txtNota" layoutX="100.0" layoutY="130.0" prefHeight="100.0" prefWidth="270.0" />
+
+
+       <Button fx:id="btnNuevaNota" layoutX="158.0" layoutY="297.0" onAction="#crearNota" text="Crear nueva nota" />
+      <Label layoutX="20.0" layoutY="250.0" text="Recordatorio" />
+      <DatePicker layoutX="100.0" layoutY="246.0" prefHeight="26.0" prefWidth="270.0" />
+       <TableView fx:id="tablaNotas" layoutX="384.0" layoutY="35.0" prefHeight="200.0" prefWidth="340.0">
+           <columns>
+               <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+               <TableColumn fx:id="colTitulo" text="Título" />
+               <TableColumn fx:id="colCategoria" text="Categoría" />
+               <TableColumn fx:id="colTexto" text="Nota" />
+               <TableColumn fx:id="colFecha" text="Fecha creación" />
+           </columns>
+   </TableView>
+
+
+       <Button fx:id="btnEliminarNota" layoutX="289.0" layoutY="297.0" onAction="#eliminarNota" text="Eliminar nota" />
+   </children>
+</AnchorPane>
